@@ -646,3 +646,1907 @@ body.no-scroll{
     overflow:hidden;
 
 }
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 6
+   GALLERY
+========================================== */
+
+.gallery{
+
+    position:relative;
+
+    background:var(--surface);
+
+}
+
+/* ==========================================
+   GALLERY GRID
+========================================== */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:1.5rem;
+
+    margin-top:3rem;
+
+}
+
+/* ==========================================
+   GALLERY ITEM
+========================================== */
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+    cursor:pointer;
+
+    background:var(--white);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.gallery-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================
+   GALLERY IMAGE
+========================================== */
+
+.gallery-item picture{
+
+    display:block;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:
+        transform .4s ease,
+        filter .4s ease;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+    filter:brightness(.88);
+
+}
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    background:rgba(0,0,0,.45);
+
+    color:var(--white);
+
+    opacity:0;
+
+    transition:opacity var(--transition);
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay i{
+
+    font-size:2rem;
+
+    margin-bottom:.75rem;
+
+}
+
+.gallery-overlay h3{
+
+    color:var(--white);
+
+    margin-bottom:.4rem;
+
+}
+
+.gallery-overlay p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+/* ==========================================
+   GALLERY FILTER
+========================================== */
+
+.gallery-filter{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+.gallery-filter button{
+
+    padding:.75rem 1.5rem;
+
+    border-radius:999px;
+
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.gallery-filter button:hover,
+
+.gallery-filter button.active{
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.92);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity var(--transition);
+
+    z-index:9999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:85vh;
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--white);
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+}
+
+.lightbox-prev,
+
+.lightbox-next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:55px;
+
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:var(--white);
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+}
+
+.lightbox-prev{
+
+    left:25px;
+
+}
+
+.lightbox-next{
+
+    right:25px;
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 7
+   TESTIMONIAL
+========================================== */
+
+.testimonial{
+
+    position:relative;
+
+    background:var(--white);
+
+}
+
+/* ==========================================
+   TESTIMONIAL GRID
+========================================== */
+
+.testimonial-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:2rem;
+
+    margin-top:3rem;
+
+}
+
+/* ==========================================
+   TESTIMONIAL CARD
+========================================== */
+
+.testimonial-card{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:2rem;
+
+    background:var(--white);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+    overflow:hidden;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================
+   QUOTE ICON
+========================================== */
+
+.testimonial-quote{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    font-size:3rem;
+
+    color:rgba(255,107,0,.12);
+
+    user-select:none;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.testimonial-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.testimonial-avatar{
+
+    flex-shrink:0;
+
+}
+
+.testimonial-avatar img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--primary);
+
+}
+
+/* ==========================================
+   CUSTOMER INFO
+========================================== */
+
+.testimonial-info{
+
+    flex:1;
+
+}
+
+.testimonial-name{
+
+    margin-bottom:.25rem;
+
+}
+
+.testimonial-location{
+
+    margin:0;
+
+    font-size:.9rem;
+
+    color:var(--text-color);
+
+}
+
+/* ==========================================
+   RATING
+========================================== */
+
+.testimonial-rating{
+
+    display:flex;
+
+    gap:.25rem;
+
+    margin-top:.5rem;
+
+    color:#ffc107;
+
+    font-size:1rem;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.testimonial-text{
+
+    margin:0;
+
+    color:var(--text-color);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   GOOGLE REVIEW
+========================================== */
+
+.google-review{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:1rem;
+
+    margin-top:3rem;
+
+    padding:1.5rem 2rem;
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+}
+
+.google-review-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.google-review-logo{
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:contain;
+
+}
+
+.google-review-score h3{
+
+    margin-bottom:.2rem;
+
+}
+
+.google-review-score p{
+
+    margin:0;
+
+}
+
+.google-review .btn{
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 8
+   FAQ
+========================================== */
+
+.faq{
+
+    position:relative;
+
+    background:var(--surface);
+
+}
+
+/* ==========================================
+   FAQ CONTAINER
+========================================== */
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:3rem auto 0;
+
+}
+
+/* ==========================================
+   FAQ ITEM
+========================================== */
+
+.faq-item{
+
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    margin-bottom:1rem;
+
+    overflow:hidden;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.faq-item:hover{
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.faq-item.active{
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* ==========================================
+   FAQ BUTTON
+========================================== */
+
+.faq-question{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1.25rem 1.5rem;
+
+    background:transparent;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:var(--title-color);
+
+}
+
+.faq-question i{
+
+    font-size:1rem;
+
+    color:var(--primary);
+
+    transition:transform var(--transition);
+
+}
+
+.faq-item.active .faq-question i{
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================
+   FAQ ANSWER
+========================================== */
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .35s ease,
+        padding .35s ease;
+
+}
+
+.faq-answer-content{
+
+    padding:0 1.5rem 1.5rem;
+
+}
+
+.faq-answer p{
+
+    margin:0;
+
+    color:var(--text-color);
+
+    line-height:1.8;
+
+}
+
+/* ==========================================
+   ACTIVE
+========================================== */
+
+.faq-item.active .faq-answer{
+
+    max-height:500px;
+
+}
+
+/* ==========================================
+   FAQ FOOTER
+========================================== */
+
+.faq-footer{
+
+    margin-top:3rem;
+
+    text-align:center;
+
+}
+
+.faq-footer p{
+
+    margin-bottom:1rem;
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 9
+   MAPS & CONTACT
+========================================== */
+
+/* ==========================================
+   MAPS
+========================================== */
+
+.maps{
+
+    position:relative;
+
+    background:var(--white);
+
+}
+
+.maps-container{
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    margin-top:3rem;
+
+}
+
+.maps iframe{
+
+    display:block;
+
+    width:100%;
+
+    height:450px;
+
+    border:0;
+
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact{
+
+    position:relative;
+
+    background:var(--surface);
+
+}
+
+.contact-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:3rem;
+
+    margin-top:3rem;
+
+}
+
+/* ==========================================
+   CONTACT INFO
+========================================== */
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+.contact-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:1rem;
+
+    padding:1.5rem;
+
+    background:var(--white);
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.contact-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:rgba(255,107,0,.12);
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+}
+
+.contact-content h3{
+
+    margin-bottom:.4rem;
+
+}
+
+.contact-content p{
+
+    margin:0;
+
+}
+
+.contact-content a{
+
+    color:var(--primary);
+
+    transition:color var(--transition);
+
+}
+
+.contact-content a:hover{
+
+    color:var(--primary-dark);
+
+}
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+.contact-form{
+
+    padding:2rem;
+
+    background:var(--white);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.form-group{
+
+    margin-bottom:1.5rem;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:.5rem;
+
+    font-weight:600;
+
+    color:var(--title-color);
+
+}
+
+.form-control{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-sm);
+
+    background:var(--white);
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(255,107,0,.15);
+
+}
+
+textarea.form-control{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+/* ==========================================
+   CONTACT BUTTON
+========================================== */
+
+.contact-form .btn{
+
+    width:100%;
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 10
+   ORDER
+========================================== */
+
+.order{
+
+    position:relative;
+
+    background:var(--white);
+
+}
+
+/* ==========================================
+   ORDER CONTAINER
+========================================== */
+
+.order-container{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:2rem;
+
+    align-items:start;
+
+    margin-top:3rem;
+
+}
+
+/* ==========================================
+   ORDER FORM
+========================================== */
+
+.order-form{
+
+    padding:2rem;
+
+    background:var(--white);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.order-form .form-group{
+
+    margin-bottom:1.5rem;
+
+}
+
+.order-form label{
+
+    display:block;
+
+    margin-bottom:.5rem;
+
+    font-weight:600;
+
+    color:var(--title-color);
+
+}
+
+.order-form .form-control{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-sm);
+
+    transition:var(--transition);
+
+}
+
+.order-form .form-control:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 3px rgba(255,107,0,.15);
+
+}
+
+/* ==========================================
+   PAYMENT
+========================================== */
+
+.payment-method{
+
+    display:grid;
+
+    gap:1rem;
+
+    margin-top:2rem;
+
+}
+
+.payment-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem;
+
+    border:2px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.payment-card:hover{
+
+    border-color:var(--primary);
+
+}
+
+.payment-card.active{
+
+    border-color:var(--primary);
+
+    background:rgba(255,107,0,.08);
+
+}
+
+.payment-card img{
+
+    width:45px;
+
+    height:45px;
+
+    object-fit:contain;
+
+}
+
+.payment-card h4{
+
+    margin-bottom:.2rem;
+
+}
+
+.payment-card p{
+
+    margin:0;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================
+   ORDER SUMMARY
+========================================== */
+
+.order-summary{
+
+    position:sticky;
+
+    top:100px;
+
+    padding:2rem;
+
+    background:var(--surface);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.order-summary h3{
+
+    margin-bottom:1.5rem;
+
+}
+
+.summary-list{
+
+    display:grid;
+
+    gap:1rem;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.summary-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:1.5rem;
+
+    padding-top:1rem;
+
+    border-top:2px dashed var(--border);
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   ORDER BUTTON
+========================================== */
+
+.order-submit{
+
+    width:100%;
+
+    margin-top:2rem;
+
+}
+
+/* ==========================================
+   PAYMENT INFO
+========================================== */
+
+.payment-info{
+
+    margin-top:1.5rem;
+
+    padding:1rem;
+
+    background:rgba(255,107,0,.08);
+
+    border-left:4px solid var(--primary);
+
+    border-radius:var(--radius-sm);
+
+}
+
+.payment-info strong{
+
+    display:block;
+
+    margin-bottom:.4rem;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 11
+   FOOTER
+========================================== */
+
+.footer{
+
+    position:relative;
+
+    color:var(--white);
+
+    background:var(--secondary);
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   FOOTER TOP
+========================================== */
+
+.footer-top{
+
+    padding:80px 0 50px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1.5fr;
+
+    gap:2.5rem;
+
+}
+
+/* ==========================================
+   FOOTER BRAND
+========================================== */
+
+.footer-brand{
+
+    max-width:380px;
+
+}
+
+.footer-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    margin-bottom:1.25rem;
+
+}
+
+.footer-logo img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+}
+
+.footer-logo h3{
+
+    color:var(--white);
+
+    margin-bottom:.2rem;
+
+}
+
+.footer-brand p{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+/* ==========================================
+   FOOTER TITLE
+========================================== */
+
+.footer-title{
+
+    color:var(--white);
+
+    margin-bottom:1.25rem;
+
+    font-size:1.2rem;
+
+}
+
+/* ==========================================
+   FOOTER LINK
+========================================== */
+
+.footer-links{
+
+    display:grid;
+
+    gap:.85rem;
+
+}
+
+.footer-links a{
+
+    color:rgba(255,255,255,.75);
+
+    transition:
+        color var(--transition),
+        padding-left var(--transition);
+
+}
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+    padding-left:6px;
+
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+.footer-contact{
+
+    display:grid;
+
+    gap:1rem;
+
+}
+
+.footer-contact li{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:.85rem;
+
+}
+
+.footer-contact i{
+
+    color:var(--primary);
+
+    font-size:1.1rem;
+
+    margin-top:.2rem;
+
+}
+
+.footer-contact span{
+
+    color:rgba(255,255,255,.75);
+
+}
+
+/* ==========================================
+   SOCIAL
+========================================== */
+
+.footer-social{
+
+    display:flex;
+
+    gap:.75rem;
+
+    margin-top:1.5rem;
+
+}
+
+.footer-social a{
+
+    width:46px;
+
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+
+}
+
+.footer-social a:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.footer-newsletter{
+
+    margin-top:1.5rem;
+
+}
+
+.footer-newsletter form{
+
+    display:flex;
+
+    margin-top:1rem;
+
+}
+
+.footer-newsletter input{
+
+    flex:1;
+
+    padding:14px 16px;
+
+    color:var(--white);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:
+        var(--radius-full)
+        0
+        0
+        var(--radius-full);
+
+}
+
+.footer-newsletter input::placeholder{
+
+    color:rgba(255,255,255,.55);
+
+}
+
+.footer-newsletter button{
+
+    padding:0 22px;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    border-radius:
+        0
+        var(--radius-full)
+        var(--radius-full)
+        0;
+
+    transition:var(--transition);
+
+}
+
+.footer-newsletter button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================
+   FOOTER BOTTOM
+========================================== */
+
+.footer-bottom{
+
+    padding:20px 0;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+}
+
+.footer-bottom-content{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+.footer-bottom p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.footer-bottom-links{
+
+    display:flex;
+
+    gap:1.5rem;
+
+}
+
+.footer-bottom-links a{
+
+    color:rgba(255,255,255,.65);
+
+    transition:color var(--transition);
+
+}
+
+.footer-bottom-links a:hover{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   STYLE.CSS
+   BAGIAN 12
+   LOADER • LIGHTBOX • SCROLL TOP • UTILITIES
+========================================== */
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--white);
+
+    z-index:99999;
+
+    transition:
+        opacity .4s ease,
+        visibility .4s ease;
+
+}
+
+.loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:5px solid rgba(0,0,0,.1);
+
+    border-top:5px solid var(--primary);
+
+    border-radius:50%;
+
+}
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.92);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    z-index:9999;
+
+    transition:var(--transition);
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:85vh;
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    width:50px;
+
+    height:50px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    color:var(--white);
+
+    background:rgba(255,255,255,.15);
+
+    cursor:pointer;
+
+}
+
+.lightbox-prev,
+
+.lightbox-next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:55px;
+
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    color:var(--white);
+
+    cursor:pointer;
+
+}
+
+.lightbox-prev{
+
+    left:25px;
+
+}
+
+.lightbox-next{
+
+    right:25px;
+
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.scroll-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    box-shadow:var(--shadow-lg);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:var(--transition);
+
+    z-index:999;
+
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.scroll-top:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================
+   SECTION SPACING
+========================================== */
+
+.section-padding{
+
+    padding:100px 0;
+
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.img-fluid{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+/* ==========================================
+   DISPLAY
+========================================== */
+
+.d-none{
+
+    display:none !important;
+
+}
+
+.d-block{
+
+    display:block !important;
+
+}
+
+.d-flex{
+
+    display:flex !important;
+
+}
+
+.d-grid{
+
+    display:grid !important;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+/* ==========================================
+   MARGIN
+========================================== */
+
+.mt-1{margin-top:.5rem;}
+.mt-2{margin-top:1rem;}
+.mt-3{margin-top:1.5rem;}
+.mt-4{margin-top:2rem;}
+
+.mb-1{margin-bottom:.5rem;}
+.mb-2{margin-bottom:1rem;}
+.mb-3{margin-bottom:1.5rem;}
+.mb-4{margin-bottom:2rem;}
+
+/* ==========================================
+   VISIBILITY
+========================================== */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.visible{
+
+    display:block !important;
+
+}
