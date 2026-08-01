@@ -1,0 +1,863 @@
+/* ==========================================
+   ANIMATION.CSS
+   BAGIAN 1
+   FADE • SLIDE • ZOOM • ROTATE
+========================================== */
+
+/* ==========================
+   VARIABLE
+========================== */
+
+:root{
+
+    --anim-fast:.3s;
+    --anim-normal:.5s;
+    --anim-slow:.8s;
+
+    --ease:ease;
+    --ease-in:ease-in;
+    --ease-out:ease-out;
+    --ease-in-out:ease-in-out;
+
+}
+
+/* ==========================
+   FADE
+========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+.fade-in{
+
+    animation:fadeIn var(--anim-normal) var(--ease) both;
+
+}
+
+/* ==========================
+   FADE UP
+========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .7s var(--ease-out) both;
+
+}
+
+/* ==========================
+   FADE DOWN
+========================== */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-down{
+
+    animation:fadeDown .7s var(--ease-out) both;
+
+}
+
+/* ==========================
+   SLIDE LEFT
+========================== */
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+.slide-left{
+
+    animation:slideLeft .7s var(--ease-out) both;
+
+}
+
+/* ==========================
+   SLIDE RIGHT
+========================== */
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+.slide-right{
+
+    animation:slideRight .7s var(--ease-out) both;
+
+}
+
+/* ==========================
+   ZOOM IN
+========================== */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.zoom-in{
+
+    animation:zoomIn .6s var(--ease-out) both;
+
+}
+
+/* ==========================
+   ZOOM OUT
+========================== */
+
+@keyframes zoomOut{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.15);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.zoom-out{
+
+    animation:zoomOut .6s var(--ease-out) both;
+
+}
+
+/* ==========================
+   ROTATE IN
+========================== */
+
+@keyframes rotateIn{
+
+    from{
+
+        opacity:0;
+
+        transform:rotate(-10deg) scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:rotate(0) scale(1);
+
+    }
+
+}
+
+.rotate-in{
+
+    animation:rotateIn .6s var(--ease-out) both;
+
+}
+
+/* ==========================================
+   ANIMATION.CSS
+   BAGIAN 2
+   FLOAT • PULSE • BOUNCE • BUTTON
+========================================== */
+
+/* ==========================
+   FLOAT
+========================== */
+
+@keyframes floating{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.float{
+
+    animation:floating 3s ease-in-out infinite;
+
+}
+
+/* ==========================
+   PULSE
+========================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.pulse{
+
+    animation:pulse 1.8s ease-in-out infinite;
+
+}
+
+/* ==========================
+   BOUNCE
+========================== */
+
+@keyframes bounce{
+
+    0%,20%,50%,80%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    40%{
+
+        transform:translateY(-10px);
+
+    }
+
+    60%{
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+.bounce{
+
+    animation:bounce 1.5s infinite;
+
+}
+
+/* ==========================
+   BUTTON HOVER
+========================== */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================
+   RIPPLE EFFECT
+========================== */
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:0;
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:translate(-50%,-50%);
+
+    transition:
+
+        width .5s ease,
+
+        height .5s ease,
+
+        opacity .5s ease;
+
+    opacity:0;
+
+}
+
+.btn:active::after{
+
+    width:320px;
+
+    height:320px;
+
+    opacity:1;
+
+}
+
+/* ==========================
+   SHINE EFFECT
+========================== */
+
+.btn-shine{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-shine::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transition:left .8s ease;
+
+}
+
+.btn-shine:hover::before{
+
+    left:160%;
+
+}
+
+/* ==========================
+   ICON ROTATE
+========================== */
+
+.btn i{
+
+    transition:transform .3s ease;
+
+}
+
+.btn:hover i{
+
+    transform:translateX(4px);
+
+}
+
+/* ==========================================
+   ANIMATION.CSS
+   BAGIAN 3
+   HERO • MENU • GALLERY • TESTIMONIAL
+========================================== */
+
+/* ==========================
+   HERO IMAGE
+========================== */
+
+.hero-image img{
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+
+}
+
+.hero-image:hover img{
+
+    transform:scale(1.03);
+
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.18));
+
+}
+
+/* ==========================
+   HERO CONTENT
+========================== */
+
+.hero-title,
+.hero-description,
+.hero-buttons{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.hero-description{
+
+    animation-delay:.15s;
+
+}
+
+.hero-buttons{
+
+    animation-delay:.3s;
+
+}
+
+/* ==========================
+   MENU CARD
+========================== */
+
+.menu-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+    will-change:transform;
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.menu-card img{
+
+    transition:
+        transform .45s ease;
+
+}
+
+.menu-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.gallery-item{
+
+    overflow:hidden;
+
+}
+
+.gallery-item img{
+
+    transition:
+
+        transform .45s ease,
+
+        filter .45s ease;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+    filter:brightness(.9);
+
+}
+
+/* Overlay */
+
+.gallery-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        rgba(0,0,0,.18);
+
+    opacity:0;
+
+    transition:.35s ease;
+
+}
+
+.gallery-item:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   TESTIMONIAL
+========================== */
+
+.testimonial-card{
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 15px 30px rgba(0,0,0,.10);
+
+}
+
+/* Avatar */
+
+.testimonial-avatar img{
+
+    transition:
+
+        transform .35s ease;
+
+}
+
+.testimonial-card:hover
+.testimonial-avatar img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================
+   ANIMATION.CSS
+   BAGIAN 4
+   LOADER • SCROLL • ACCESSIBILITY
+========================================== */
+
+/* ==========================
+   LOADER
+========================== */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+    z-index:99999;
+
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+
+}
+
+.loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-spinner{
+
+    width:60px;
+
+    height:60px;
+
+    border:5px solid rgba(0,0,0,.1);
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:loaderSpin .8s linear infinite;
+
+}
+
+@keyframes loaderSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================
+   BACK TO TOP
+========================== */
+
+.scroll-top{
+
+    transition:
+
+        opacity .3s ease,
+
+        transform .3s ease;
+
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.scroll-top:not(.show){
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(20px);
+
+}
+
+/* ==========================
+   SCROLL ANIMATION
+========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ==========================
+   STAGGER DELAY
+========================== */
+
+.delay-1{
+
+    animation-delay:.1s;
+
+}
+
+.delay-2{
+
+    animation-delay:.2s;
+
+}
+
+.delay-3{
+
+    animation-delay:.3s;
+
+}
+
+.delay-4{
+
+    animation-delay:.4s;
+
+}
+
+.delay-5{
+
+    animation-delay:.5s;
+
+}
+
+/* ==========================
+   HOVER PERFORMANCE
+========================== */
+
+.menu-card,
+.gallery-item,
+.testimonial-card,
+.btn,
+.hero-image img{
+
+    will-change:transform;
+
+}
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
