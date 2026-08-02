@@ -443,9 +443,9 @@ p{
 
 .logo img{
 
-    width:60px;
+    width:48px;
 
-    height:60px;
+    height:48px;
 
     object-fit:contain;
 
@@ -713,13 +713,13 @@ body.no-scroll{
    GALLERY IMAGE
 ========================================== */
 
-.gallery-item picture{
+.gallery-menu picture{
 
     display:block;
 
 }
 
-.gallery-item img{
+.gallery-menu img{
 
     width:100%;
 
@@ -733,7 +733,7 @@ body.no-scroll{
 
 }
 
-.gallery-item:hover img{
+.gallery-menu:hover img{
 
     transform:scale(1.08);
 
